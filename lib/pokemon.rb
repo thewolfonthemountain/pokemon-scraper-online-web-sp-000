@@ -11,7 +11,7 @@ class Pokemon
   end
 
   def self.find(id, db)
-    ins = db.prepare('select name, type, db from pokemon where id = (?)')
+    ins = db.prepare('select name, type from pokemon where id = (?)')
     poke = ins.execute(id)
   end
 end
