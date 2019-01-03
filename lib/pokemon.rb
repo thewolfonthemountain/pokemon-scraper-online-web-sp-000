@@ -17,4 +17,5 @@ class Pokemon
     type = type_prepare.execute(id)
     initialize(id:id, name:name, type:type, db:db)
   end
+
 end
