@@ -15,7 +15,7 @@ class Pokemon
     type_prepare = db.prepare('select type from pokemon where id = (?)')
     name = name_prepare.execute(id)
     type = type_prepare.execute(id)
-    initialize(id:id, name:name, type:type, db:db)
+#    id:id, name:name, type:type, db:db
   end
 
 end
