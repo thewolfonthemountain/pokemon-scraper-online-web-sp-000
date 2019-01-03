@@ -7,13 +7,11 @@ class Pokemon
 
   def self.save(name, type, db)
     ins = db.prepare('insert into pokemon (name, type) values ( ?, ? )')
-    balls = ins.execute(name, type)
-    binding.pry
+    ins.execute(name, type)
   end
 
   def self.find(number, db)
-    sel = db.prepare('SELECT * from pokemon where id = (?)')
-    pokemon = sel.execute(number)
+    pokemon = db.execute('SELECT * FROM pokemon WHERE id = #{number}')
     binding.pry
 #    id:id, name:name, type:type, db:db
   end
