@@ -11,10 +11,10 @@ class Pokemon
   end
 
   def self.find(number, db)
-    name_prepare = db.prepare('select name from pokemon where id = (?)')
-    type_prepare = db.prepare('select type from pokemon where id = (?)')
-    @name = name_prepare.execute(number)
-    @type = type_prepare.execute(number)
+    n_ins = db.prepare('select name from pokemon where id = (?)')
+    t_inst = db.prepare('select type from pokemon where id = (?)')
+    @name = n_ins.execute(number)
+    @type = t_ins.execute(number)
 #    id:id, name:name, type:type, db:db
   end
 
