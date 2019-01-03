@@ -13,6 +13,7 @@ class Pokemon
   def self.find(number, db)
     ins = db.prepare('SELECT name, type FROM pokemon WHERE id = ?')
     ins2 = db.prepare('SELECT name, type FROM pokemon')
+    binding.pry
     pokemon = ins.execute(number)
 #    id:id, name:name, type:type, db:db
   end
